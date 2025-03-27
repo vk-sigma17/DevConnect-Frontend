@@ -5,7 +5,7 @@ import Footer from './Footer'
 
 function Body() {
   return (
-    <div>
+    <div style={{backgroundColor: "#212121", height:"100vh"}}>
         <NavBar />    
         <Outlet />
         <Footer />

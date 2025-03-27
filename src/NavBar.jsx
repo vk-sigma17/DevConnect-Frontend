@@ -4,7 +4,7 @@ function NavBar() {
   return (
     <div className="navbar bg-neutral shadow-sm">
       <div className="flex-1">
-        <a className="btn btn-ghost text-xl text-white">🧑DevConnect</a>
+        <a className="btn btn-ghost text-xl text-white hover:text-black">🧑DevConnect</a>
       </div>
       <div className="flex gap-2">
         <div className="dropdown dropdown-end mx-4">
