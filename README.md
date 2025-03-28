@@ -19,3 +19,7 @@
 - Login & check the data coming properly in Store
 - Navbar Should update as soon as User Login
 - Refactor code (replace all basic component into Components Folder)
+- Should Not Acess other Routes without login
+- If Token is not present then Redirect to Login Page
+- Logout
+- profile Page

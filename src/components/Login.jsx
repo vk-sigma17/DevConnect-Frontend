@@ -9,6 +9,7 @@ import { BASE_URL } from "../util/constants";
 function Login() {
     const [emailId, setEmailId] = useState("Vikash123@gmail.com");
     const [password, setPassword] = useState("Vikash@123");
+    const [error, setError] = useState('')
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
@@ -27,13 +28,14 @@ function Login() {
             
         }
         catch(err){
-            console.error(err)
+            console.error(err);
+            setError(err.response.data)
         }
     }
 
   return (
     <div className="flex justify-center my-12">
-      <div className="card bg-base-content text-primary-content w-96 h-[316px]">
+      <div className="card bg-base-content text-primary-content w-96 ">
         <div className="card-body">
           <h2 className="card-title flex justify-center">Login</h2>
           <div>
@@ -50,6 +52,7 @@ function Login() {
               />
             </fieldset>
           </div>
+          <p style={{color:"red"}}>{error}</p>
           <div className="card-actions justify-center mt-4">
             <button className="btn bg-blue-500 text-black border-none" onClick={handleLogin}>Login</button>
           </div>
