@@ -10,11 +10,11 @@ import { addUser } from '../util/userSlice'
 function Body() {
   const dispatch = useDispatch();
   const navigate = useNavigate()
-  const userData = useSelector((store) => store.user)
+  const user = useSelector((store) => store.user)
 
   // to maintain Data in body (so the user details does not disapper on refresh body)
   const fetchUser = async() => {
-    if(userData) return;
+    // if(user) return;
     try{
       const res = await axios.get(BASE_URL + "/profile/view", 
         {withCredentials: true}
@@ -30,8 +30,9 @@ function Body() {
   }
 
   React.useEffect(() => {
-    
+    if(!user){
       fetchUser()
+    }
     
   }, [])
 
