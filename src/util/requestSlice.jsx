@@ -9,7 +9,6 @@ const requestSlice = createSlice({
         },
         removeRequest:(state, action) => {
             const newArray = state.filter((req) => req._id !== action.payload);
-            console.log("ascd", newArray)
             return newArray;
         }
     }

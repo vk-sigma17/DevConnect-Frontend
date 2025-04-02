@@ -23,12 +23,10 @@ function NavBar() {
            );
            dispatch(removeUser())
            dispatch(removeFeed())
-           dispatch(removeRequest())
+          //  dispatch(removeRequest())
            return navigate("/login")
           }catch(err){ 
-          
-          
-        console.error("ERROR :", err)
+          console.error("ERROR :", err)
       }
 
 
@@ -38,14 +36,12 @@ function NavBar() {
 // }
 
   return (
-    <div className="navbar bg-neutral shadow-sm">
+    <div className="navbar bg-neutral shadow-sm flex flex-wrap">
       <div className="flex-1">
-        <Link to="/" className="btn btn-ghost text-xl text-white hover:text-black">🧑Devloper<span
-        style={{backgroundColor:"#fc8c03", color:'black', padding:"-1px 2px", marginLeft:"-4px", borderRadius:"5px"}}
-        >hub</span></Link>
+        <Link to="/" className="btn btn-ghost text-xl text-white hover:text-black">🧑DevConnect</Link>
       </div>
      {user && <div className="flex gap-2 items-center">
-        <div className="text-white">Welcome, {user.firstName}</div>
+        <div className="text-white hidden sm:block">Welcome, {user.firstName}</div>
         <div className="dropdown dropdown-end mx-4">
           <div
             tabIndex={0}

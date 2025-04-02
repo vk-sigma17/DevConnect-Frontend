@@ -39,7 +39,7 @@ function Body() {
   return (
     <div style={{backgroundColor: "#212121", height:"100vh"}}>
         <NavBar />    
-        <Outlet />
+        <Outlet/>
         <Footer />
     </div>
 )

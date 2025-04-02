@@ -35,11 +35,11 @@ if(connections.length === 0){
 }
 
  return (
-    <div className="flex flex-col items-center justify-center my-6"> {/* Added 'flex-col' here */}
+    <div className="flex flex-col items-center justify-center flex-wrap my-6"> {/* Added 'flex-col' here */}
     {connections.map((connection) => {
       return (
-        <div key={connection._id} className="card flex w-96 bg-base-100 card-xs shadow-sm mb-4"> {/* Added 'mb-4' to add spacing between cards */}
-          <div className="card-body flex flex-row justify-around items-center">
+        <div style={{Width:"350px"}} key={connection._id} className="card flex  px-6 bg-base-100 card-xs shadow-sm mb-4"> {/* Added 'mb-4' to add spacing between cards */}
+          <div className="card-body flex flex-row justify-between items-center w-full">
             <img
               src={connection?.photoUrl || "https://www.mjunction.in/wp-content/uploads/2020/09/Dummy.jpg"}
               alt="connection photo"
@@ -52,7 +52,7 @@ if(connections.length === 0){
             <div>
               <h2 className="card-title">{connection.firstName + " " + connection.lastName}</h2>
               {connection.age && connection.gender && <p>{connection.age + ", " + connection.gender}</p>}
-              <p>{connection.about}</p>
+              <p style={{minWidth:"150px"}}>{connection.about}</p>
             </div>
           </div>
         </div>

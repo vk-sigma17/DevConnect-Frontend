@@ -9,7 +9,7 @@ function Profile() {
   
   return (
     <div className='text-white'>
-      {user && <EditProfile user={user}/>}
+      {user && <EditProfile user={user} showBtn={true}/>}
     </div>
   )
 }

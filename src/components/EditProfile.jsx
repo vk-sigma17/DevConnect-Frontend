@@ -4,8 +4,10 @@ import 'react-toastify/dist/ReactToastify.css';
 import UserCard from "./userCard";
 import axios from "axios";
 import { BASE_URL } from "../util/constants";
-
+import { useDispatch } from "react-redux";
+import { updateUser } from "../util/userSlice";
 const EditProfile = ({ user}) => {
+    const dispatch = useDispatch()
   const [firstName, setFirstName] = useState(user?.firstName);
   const [lastName, setLastName] = useState(user?.lastName);
   const [age, setAge] = useState(user?.age || "");
@@ -18,7 +20,7 @@ const EditProfile = ({ user}) => {
   const updateProfile = async() => {
     // clearing Error
     setError("")
-    try{
+    try {
         const res = await axios.patch(BASE_URL + "/profile/edit", 
             {
                 firstName,
@@ -29,13 +31,23 @@ const EditProfile = ({ user}) => {
                 photoUrl
             },
             {withCredentials: true}
-        )
-        toast.success(res.data.message)
+        );
+        
+        // Update the user data in Redux store
+        dispatch(updateUser({
+            ...user,
+            firstName,
+            lastName,
+            age,
+            gender,
+            about,
+            photoUrl
+        }));
+        
+        toast.success(res.data.message);
+    } catch(err) {
+        setError(err.response.data);
     }
-        catch(err){
-            // toast.error(err.response.data)
-            setError(err.response.data)
-        }
   }
 
   return (
@@ -146,7 +158,7 @@ const EditProfile = ({ user}) => {
             </div>
         </div>
 
-        <UserCard user={{ firstName, lastName, age, gender, photoUrl, about }}/>
+        <UserCard user={{ firstName, lastName, age, gender, photoUrl, about }} showActions={false}/>
         </div>
     </>
   );

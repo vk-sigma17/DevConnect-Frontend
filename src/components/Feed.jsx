@@ -1,4 +1,3 @@
-
 import axios from 'axios';
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -27,13 +26,17 @@ function Feed() {
 
   useEffect(() => {
     getFeed();
-    
   }, [])
+  if(!feed) return;
+  if(feed.length <= 0){
+    return <h2 className='flex justify-center my-6 text-white'>No New Users Found!</h2>
+
+  }
 
   return (
     feed &&
       <div className='flex justify-center my-6'>
-        <UserCard user={feed[3]}/>
+        <UserCard user={feed[0]} showActions={true}/>
       </div>
 
     
@@ -41,4 +44,4 @@ function Feed() {
   )
 }
 
-export default Feed
+export default Feed;
