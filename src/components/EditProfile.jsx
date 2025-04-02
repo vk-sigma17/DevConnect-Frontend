@@ -1,7 +1,7 @@
 import React, { use, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'; 
-import UserCard from "./userCard";
+import UserCard from "./UserCard";
 import axios from "axios";
 import { BASE_URL } from "../util/constants";
 import { useDispatch } from "react-redux";
