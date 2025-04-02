@@ -30,3 +30,21 @@
 -New Page - see All Connections request
 -New Page - see All connections request
 -Accept & Reject Request 
+
+
+#Deployment
+- sign Up at AWS
+- launch Instance
+- chmod 400 <>.pem
+- ssh -i "devConnect-secret.pem" ubuntu@ec2-13-201-128-158.ap-south-1.compute.amazonaws.com
+- install node version (nvm install v22.11.0)
+- Git clone
+- ls (show git clone projects)
+- Go to frontend Project
+- install dependency -> npm install
+- build dist -> npm run build
+- sudo apt update
+- sudo apt update nginx
+- sudo systemctl start nginx
+- sudo systemctl enable nginx
+- copy code from dist(build     files) to /var/www/html/
