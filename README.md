@@ -42,7 +42,7 @@
 - OR = icacls "C:\Users\GGN06-Vikas\Downloads\devConnect-secret.pem"
 
 - install node version (nvm install v22.11.0)
-- Git clone
+- Git clone (both Frontend & backend Project from github)
 - ls (show git clone projects)
 - Go to frontend Project
 - install dependency -> npm install
