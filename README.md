@@ -93,3 +93,12 @@ Backend = devconnect.com:7777 => devtinder.com/api
         proxy_cache_bypass $http_upgrade;
     }
     
+
+
+# Adding a Custom Domain Name
+- Purchased Domain name from godaddy
+-signup on cloudflare & add a new domain name
+-change the name serverson go daddy & point to cloudFlare   
+- wait for sometime till your nameServers are updated 
+- DNS record: A devConnect.space http://13.201.128.158
+- enable SSL for Website
