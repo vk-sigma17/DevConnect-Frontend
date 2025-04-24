@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 import { BASE_URL } from '../util/constants'
 import { addConnection, removeConnection } from '../util/connectionSlice'
 import { useDispatch, useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 const Connections = () => {
     const dispatch = useDispatch()
@@ -54,6 +55,9 @@ if(connections.length === 0){
               {connection.age && connection.gender && <p>{connection.age + ", " + connection.gender}</p>}
               <p style={{minWidth:"150px"}}>{connection.about}</p>
             </div>
+            <Link to={`/chat/${connection._id}`}>
+                <button className='btn btn-primary'>Chat</button>
+            </Link>
           </div>
         </div>
       );

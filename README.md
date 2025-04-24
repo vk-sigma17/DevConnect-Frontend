@@ -102,3 +102,8 @@ Backend = devconnect.com:7777 => devtinder.com/api
 - wait for sometime till your nameServers are updated 
 - DNS record: A devConnect.space http://13.201.128.158
 - enable SSL for Website
+
+# RealTime Chat using WebSocket(socket.io)
+- connections Add button > with link <Link to={`/chat/${connection._id}`}> (taking id from targeted user) > goes to app with these value & path="/chat/:targetedId" > display user with their URL.
+
+- install socket.io in backend (npm i socket.io)
