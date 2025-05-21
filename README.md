@@ -107,3 +107,14 @@ Backend = devconnect.com:7777 => devtinder.com/api
 - connections Add button > with link <Link to={`/chat/${connection._id}`}> (taking id from targeted user) > goes to app with these value & path="/chat/:targetedId" > display user with their URL.
 
 - install socket.io in backend (npm i socket.io)
+- setup frontend socket.io-client
+- Initialise the chat
+- createSocketConnection
+- Listen to event
+- work = improve UI
+- work = fix security bug - Auth in Web-socket
+- work = Fix bug - if i'm not friend, then i should not able to send messgaes
+- work = check if userId & targetId is friend (socket.js backend)
+- work = show green symbol when online & last seen time
+- Limit Message on Api Call when fetching from db
+- Project ideas - 1. Tic tac Toe Game & 2. Chess
